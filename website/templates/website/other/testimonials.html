@@ -1,0 +1,30 @@
+{% extends 'website/main.html' %}
+{% block content %}
+	{% include 'website/header.html' %}
+	{% include 'website/menu.html' %}
+	{% load static %}
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Накыл кептер</h1>
+
+							<div class="image main">
+								<img src="{% static 'images/banner-image-3-1920x500.jpg' %}" class="img-fluid" alt="" />
+							</div>
+
+							<div class="row">
+								{% for i in proverds %}
+								<div class="col-sm-6 text-center">
+									<p class="m-n"><em>"{{i.content | safe }}"</em></p>
+
+									<p><strong> - {{i.author}}</strong></p>
+								</div>
+								{% endfor %}
+								
+							</div>
+
+							
+						</div>
+					</div>
+					{% include 'website/footer.html' %}
+					{% endblock %}

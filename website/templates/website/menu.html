@@ -1,0 +1,24 @@
+	<!-- Menu -->
+    <nav id="menu">
+        <h2>Меню</h2>
+        <ul>
+            <li><a href="{% url 'index' %}" class="active">Башкы бет</a></li>
+
+            <li><a href="{% url 'proverd' %}">Накыл кептер</a></li>
+
+            <li><a href="{% url 'checkout' %}">Билдируу</a></li>
+
+            <li>
+                <a href="#" class="dropdown-toggle">Категориялар</a>
+                
+                <ul>
+                    {% for a in kategory %}
+                    <li><a href="{% url 'book' a.id %}">{{a.name}} </a></li>
+                    {% endfor %}
+                </ul>
+
+            </li>
+
+            <li><a href="{% url 'contact' %}">Байланыш</a></li>
+        </ul>
+    </nav>

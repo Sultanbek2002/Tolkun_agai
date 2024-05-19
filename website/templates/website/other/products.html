@@ -1,0 +1,33 @@
+{% extends 'website/main.html' %}
+{% block content  %}
+{% include 'website/header.html' %}
+{% include 'website/menu.html' %}
+<!-- Main -->
+{% load static %}
+					<div id="main">
+						<div class="inner">
+							<h1>Китептер</h1>
+
+							<div class="image main">
+								<img src="{% static 'images/banner-image-6-1920x500.jpg' %}" class="img-fluid" alt="" />
+							</div>
+
+							<!-- Products -->
+							<section class="tiles">
+								{% for i in books %}
+								<article class="style1">
+									<span class="image">
+										<img src="{{i.cover.url}}" width="312" height="208" alt="" />
+									</span>
+									<a href="{% url 'topic' i.id %}">
+										<h2>{{i.title}}</h2>
+										
+									</a>
+								</article>
+								{% endfor %}
+							</section>
+						</div>
+					</div>
+
+			{% include 'website/footer.html' %}
+		{% endblock %}

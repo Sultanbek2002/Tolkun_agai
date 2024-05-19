@@ -1,0 +1,50 @@
+{% extends 'website/main.html' %}
+{% block content  %}
+{% include 'website/header.html' %}
+{% include 'website/menu.html' %}
+<!-- Main -->
+{% load static %}
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							
+							<div class="container-fluid">
+								<div class="row">
+									{% for i in articles %}
+									<center><h1>{{i.title}}</h1></center>
+									{{i.content| safe }}
+									{% endfor %}
+								</div>
+							</div>
+
+							<br>
+							<br>
+
+							<div class="container-fluid">
+								<h2 class="h2">Категориянын китептери  </h2>
+
+								<!-- Products -->
+								<section class="tiles">
+									{% for i in books %}
+									<article class="style1">
+										<span class="image">
+											<img src="{{i.cover.url}}" width="312" height="208" alt="" />
+										</span>
+										<a href="{% url 'topic' i.id %}">
+											<h2>{{i.title}}</h2>
+										</a>
+									</article>
+									{% endfor %}
+
+								</section>
+							</div>
+						</div>
+					</div>
+<ul>
+    {% for category in categories %}
+        <li>{{ category.name }}</li>
+    {% endfor %}
+</ul>
+
+					{% include 'website/footer.html' %}
+		{% endblock %}

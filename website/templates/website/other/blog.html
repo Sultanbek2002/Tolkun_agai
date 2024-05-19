@@ -1,0 +1,43 @@
+{% extends 'website/main.html' %}
+{% block content  %}
+{% include 'website/header.html' %}
+{% include 'website/menu.html' %}
+<!-- Main -->
+{% load static %}
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Темалар</h1>
+
+							<div class="image main">
+								<img src="{% static 'images/banner-image-6-1920x500.jpg' %}" class="img-fluid" alt="" />
+							</div>
+							
+							<div class="container-fluid">
+								<div class="row">
+									
+									<div class="col">
+										<div class="form-group">
+				                            <h4>Теманы издоо</h4>
+				                        </div>
+
+										<div class="form-group">
+				                            <div class="input-group">
+				                                <input type="text" class="form-control" placeholder="Search" aria-label="Издоо" aria-describedby="basic-addon2">
+
+				                                <span class="input-group-addon"><a href="#"><i class="fa fa-search"></i></a></span>
+				                            </div>
+				                        </div>
+										{% for i in topics %}
+				                        <br>
+				                        <p><a href="{% url 'topic_detail' i.id %}">{{i.name}}</a></p>
+										{% endfor %}
+				                        
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{% include 'website/footer.html' %}
+					{% endblock %}
