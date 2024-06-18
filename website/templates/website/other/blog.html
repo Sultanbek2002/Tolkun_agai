@@ -20,14 +20,6 @@
 										<div class="form-group">
 				                            <h4>Теманы издоо</h4>
 				                        </div>
-
-										<div class="form-group">
-				                            <div class="input-group">
-				                                <input type="text" class="form-control" placeholder="Search" aria-label="Издоо" aria-describedby="basic-addon2">
-
-				                                <span class="input-group-addon"><a href="#"><i class="fa fa-search"></i></a></span>
-				                            </div>
-				                        </div>
 										{% for i in topics %}
 				                        <br>
 				                        <p><a href="{% url 'topic_detail' i.id %}">{{i.name}}</a></p>
